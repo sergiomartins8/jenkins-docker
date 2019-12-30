@@ -10,7 +10,7 @@ pipeline {
             steps {
               script {
                 checkout scm
-                chart_dir = 'charts/api'
+                chart_dir = 'api/charts/api'
                 chart = readYaml (file: "${chart_dir}/Chart.yaml")  
                 registry_url = "https://index.docker.io/v1/" // Docker Hub
                 docker_creds_id = "docker-hub" // name of the Jenkins Credentials ID
