@@ -65,7 +65,7 @@ pipeline {
                 container_name = "api"
 
                 echo "Building service with docker.build(${maintainer_name}/${container_name}:${chart.version})"
-                container = docker.build("${maintainer_name}/${container_name}:${chart.version}", '.')
+                container = docker.build("${maintainer_name}/${container_name}:${chart.version}", "-f api/Dockerfile")
                 
                 echo 'Pushing to Docker Hub'
                 container.push()
