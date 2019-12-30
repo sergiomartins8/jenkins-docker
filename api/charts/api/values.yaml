@@ -1,0 +1,18 @@
+repository: sergiomartins8
+
+replicaCount: 1
+image:
+  pullPolicy: IfNotPresent
+service:
+  name: api
+  type: NodePort
+  externalPort: 8080
+  internalPort: 8080
+  nodePort: 32000
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

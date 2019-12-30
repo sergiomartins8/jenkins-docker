@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+
+  jenkins:
+    privileged: true
+    build: .
+    restart: always
+    ports:
+      - "8181:8080"
+      - "50000:50000"
+    volumes: 
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/etc/sysconfig/docker:/etc/sysconfig/docker"
+      - "~/jenkins_home:/var/jenkins_home"
+      - "/usr/local/bin/helm:/usr/local/bin/helm"
+      - "~/.kube:/root/.kube"
+      - "~/.helm:/hlm"
+    environment: 
+      - "HELM_HOME=/hlm"

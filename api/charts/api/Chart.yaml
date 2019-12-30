@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A restful phonebook api
+name: api
+version: v0.1
