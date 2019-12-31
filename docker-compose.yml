@@ -7,7 +7,7 @@ services:
     build: .
     restart: always
     ports:
-      - "8181:8080"
+      - "8080:8080"
       - "50000:50000"
     volumes: 
       - "/var/run/docker.sock:/var/run/docker.sock"
